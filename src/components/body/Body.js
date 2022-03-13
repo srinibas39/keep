@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Editor } from "../Editor/Editor";
 import "./Body.css"
 
 export const Body = () => {
@@ -23,7 +24,8 @@ export const Body = () => {
             </ul>
         </nav>
         <div className="content">
-            <h1>Hello</h1>
+            
+            <Editor/>
         </div>
     </div>
 }
