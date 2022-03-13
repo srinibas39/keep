@@ -1,0 +1,26 @@
+
+.body{
+    display: grid;
+    grid-template-columns: 20vw 1fr;
+    grid-template-areas: 
+    "nav div";
+    margin: 1rem;
+    justify-content: center;
+}
+
+.nav{
+    grid-area: nav;
+
+}
+
+.nav ul{
+    list-style: none;
+    
+}
+.nav ul>*{
+    margin: 1rem 0;
+}
+.content{
+    grid-area: div;
+    
+}
