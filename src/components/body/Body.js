@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Editor } from "../Editor/Editor";
+import { Note } from "../Note/Note";
 import "./Body.css"
 
 export const Body = () => {
@@ -26,6 +27,7 @@ export const Body = () => {
         <div className="content">
             
             <Editor/>
+            <Note/>
         </div>
     </div>
 }
