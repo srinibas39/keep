@@ -8,7 +8,7 @@ import "./Body.css"
 export const Body = () => {
    
   const{tags,setTags,tag,setTag}=useNotes();
-   const {dispatch} = useFilter();
+   const {state,dispatch} = useFilter();
 
 
     useEffect(() => {
@@ -22,7 +22,7 @@ export const Body = () => {
             <ul>
                 {
                     tags.map((el, idx) => {
-                        return <li onClick={()=>dispatch({type:"SELECT_FILTER",payload:el})} key={idx}>{el}</li>
+                        return <li className={state.filter===el ? "select" :""} onClick={()=>dispatch({type:"SELECT_FILTER",payload:el})} key={idx}>{el}</li>
                     })
 
                 }

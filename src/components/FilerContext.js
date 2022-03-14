@@ -14,7 +14,7 @@ export const FilterProvider=({children})=>{
         }
     }
   
-    const [state,dispatch] = useReducer(reducerFn,{filter:null});
+    const [state,dispatch] = useReducer(reducerFn,{filter:"work"});
     
     return <FilterContext.Provider value={{state,dispatch}}>
             {children}
