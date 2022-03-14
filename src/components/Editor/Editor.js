@@ -1,20 +1,22 @@
 
 import { useEffect, useState } from "react";
 import { ColorPalette } from "../colorPalette/ColorPalette";
+import { useFilter } from "../FilerContext";
 
 import { useNotes } from "../NoteContext"
 import { Select } from "../Select/Select";
+
 import "./Editor.css"
 export const Editor = () => {
     const { noteText, setNoteText, notes, setNotes, tags, selectedFilter, setSelectedFilter } = useNotes();
-
+     const{state}=useFilter()
     useEffect(() => {
         setNoteText("")
     }, [notes])
 
 
     return <>
-        <div className="editor">
+        <div className={`editor ${state.color}` }>
             <div className="editor-title">
                 <span>Title</span>
                 <span className="material-icons-outlined"
@@ -23,7 +25,7 @@ export const Editor = () => {
                     push_pin
                 </span>
             </div>
-            <input type="text" placeholder="Take a note" value={noteText} onChange={(e) => setNoteText(e.target.value)} />
+            <input className={state.color} type="text" placeholder="Take a note" value={noteText} onChange={(e) => setNoteText(e.target.value)} />
             <div className="editor-footer">
 
                  <Select setSelectedFilter={setSelectedFilter} tags={tags}/>
