@@ -24,6 +24,7 @@
 .editor-footer{
     display: flex;
     align-items: center;
+    position: relative;
 }
 .color-icon{
     margin-left: 10px;

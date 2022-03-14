@@ -9,12 +9,13 @@ export const FilterProvider=({children})=>{
         switch(action.type){
             case "SELECT_FILTER":
                 return {...state,filter:action.payload}
+            
             default:
                 return {...state}
         }
     }
   
-    const [state,dispatch] = useReducer(reducerFn,{filter:"work"});
+    const [state,dispatch] = useReducer(reducerFn,{filter:"work",color:null});
     
     return <FilterContext.Provider value={{state,dispatch}}>
             {children}

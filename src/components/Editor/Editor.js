@@ -1,42 +1,39 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { ColorPalette } from "../colorPalette/ColorPalette";
+
 import { useNotes } from "../NoteContext"
+import { Select } from "../Select/Select";
 import "./Editor.css"
 export const Editor = () => {
     const { noteText, setNoteText, notes, setNotes, tags, selectedFilter, setSelectedFilter } = useNotes();
 
-    useEffect(()=>{
-       setNoteText("")
-    },[notes])
-  
-    return <div className="editor">
-        <div className="editor-title">
-            <span>Title</span>
-            <span className="material-icons-outlined"
-                style={{ cursor: "pointer" }}
-                onClick={() => setNotes([...notes, noteText])}>
-                push_pin
-            </span>
+    useEffect(() => {
+        setNoteText("")
+    }, [notes])
 
 
-        </div>
-        <input type="text" placeholder="Take a note" value={noteText} onChange={(e) => setNoteText(e.target.value)} />
-        <div className="editor-footer">
+    return <>
+        <div className="editor">
+            <div className="editor-title">
+                <span>Title</span>
+                <span className="material-icons-outlined"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setNotes([...notes, noteText])}>
+                    push_pin
+                </span>
+            </div>
+            <input type="text" placeholder="Take a note" value={noteText} onChange={(e) => setNoteText(e.target.value)} />
+            <div className="editor-footer">
 
-            <select name="filters" onChange={(e) => setSelectedFilter(e.target.value)}>
-                {
-                    tags && tags.map((el,idx) => {
-                        return el!=="All" && <option key={idx} value={el} >{el}</option>
-                    })
-                }
+                 <Select setSelectedFilter={setSelectedFilter} tags={tags}/>
 
-            </select>
-            <span className="material-icons-outlined color-icon">
-                palette
-            </span>
-            <span className="btn-close">close</span>
-        </div>
+                 <ColorPalette/>
+
+                <span className="btn-close">close</span>
+            </div>
 
 
-    </div>
+
+        </div></>
 }
