@@ -6,8 +6,7 @@ import "./Editor.css"
 export const Editor = () => {
   const {noteText,setNoteText,notes,setNotes,tags,selectedFilter,setSelectedFilter} =useNotes();
   
-  console.log(selectedFilter);
-
+ 
     return <div className="editor">
         <div className="editor-title">
             <span>Title</span>

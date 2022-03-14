@@ -19,6 +19,7 @@
 }
 .nav ul>*{
     margin: 1rem 0;
+    cursor: pointer;
 }
 .content{
     grid-area: div;

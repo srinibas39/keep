@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { Editor } from "../Editor/Editor";
+import { useFilter } from "../FilerContext";
 import { Note } from "../Note/Note";
 import { NoteProvider, useNotes } from "../NoteContext";
 import "./Body.css"
 
 export const Body = () => {
    
-  const{tags,setTags,tag,setTag}=useNotes()
+  const{tags,setTags,tag,setTag}=useNotes();
+   const {dispatch} = useFilter();
+
+
     useEffect(() => {
         setTag("")
     }, [tags])
@@ -18,7 +22,7 @@ export const Body = () => {
             <ul>
                 {
                     tags.map((el, idx) => {
-                        return <li key={idx}>{el}</li>
+                        return <li onClick={()=>dispatch({type:"SELECT_FILTER",payload:el})} key={idx}>{el}</li>
                     })
 
                 }
