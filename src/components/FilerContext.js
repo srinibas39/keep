@@ -9,7 +9,8 @@ export const FilterProvider=({children})=>{
         switch(action.type){
             case "SELECT_FILTER":
                 return {...state,filter:action.payload}
-            
+            case "SELECT_COLOR":
+                return {...state,color:action.payload}
             default:
                 return {...state}
         }
