@@ -1,12 +1,15 @@
 import { Nav } from "./components/Nav/Nav";
 import "./App.css"
 import { Body } from "./components/body/Body";
+import { NoteProvider } from "./components/NoteContext";
 
 
-const App=()=>{
+const App = () => {
   return <>
-   <Nav/>
-   <Body/>
+    <NoteProvider>
+      <Nav />
+      <Body />
+    </NoteProvider>
   </>
 }
 

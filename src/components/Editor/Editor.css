@@ -20,13 +20,16 @@
     margin-bottom: 5px;
 }
 
+
 .editor-footer{
     display: flex;
     align-items: center;
 }
 .color-icon{
     margin-left: 10px;
+    cursor: pointer;
 }
 .btn-close{
     margin-left: auto;
+    cursor: pointer;
 }

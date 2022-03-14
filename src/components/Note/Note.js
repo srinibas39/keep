@@ -1,11 +1,19 @@
+import { useState } from "react";
+import { useNotes } from "../NoteContext"
 import "./Note.css"
+import { Snote } from "./Snote";
 
 export const Note = () => {
-    return <div className="note">
-        <h2>Home</h2>
-        <p>Hey I am Home Hey I am Home Hey I am Home Hey I am Home</p>
-        <button><span class="material-icons-outlined">
-            delete
-        </span></button>
-    </div>
+    const { notes, selectedFilter, tags } = useNotes();
+   
+    
+    return <>
+        {
+            notes && notes.map((el, idx) => {
+                return <Snote e key={idx} el={el} selectedFilter={selectedFilter}/>
+            })
+        }
+    </>
+
 }
+

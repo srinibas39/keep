@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { Editor } from "../Editor/Editor";
 import { Note } from "../Note/Note";
+import { NoteProvider, useNotes } from "../NoteContext";
 import "./Body.css"
 
 export const Body = () => {
-    const [tags, setTags] = useState(["All", "work", "Home", "Class"]);
-    const [tag, setTag] = useState("")
-
+   
+  const{tags,setTags,tag,setTag}=useNotes()
     useEffect(() => {
         setTag("")
     }, [tags])
+   
+    
     return <div className="body">
         <nav className="nav">
             <h2>Filter</h2>
@@ -25,9 +27,12 @@ export const Body = () => {
             </ul>
         </nav>
         <div className="content">
-            
+        
+
             <Editor/>
             <Note/>
+
+        
         </div>
     </div>
 }
