@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { ColorPalette } from "../colorPalette/ColorPalette";
 import { useFilter } from "../FilerContext";
 import { useNotes } from "../NoteContext";
 
@@ -21,6 +22,7 @@ export const Snote = ({ el, selectedFilter,color }) => {
                         delete 
                     </span>
                 </button>
+        
             </div>
 
         }
@@ -33,6 +35,7 @@ export const Snote = ({ el, selectedFilter,color }) => {
                         delete
                     </span>
                 </button>
+                
             </div>
         }
     </>

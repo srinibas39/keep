@@ -21,13 +21,13 @@ export const Editor = () => {
                 <span>Title</span>
                 <span className="material-icons-outlined"
                     style={{ cursor: "pointer" }}
-                    onClick={() => setNotes([...notes, noteText])}>
+                    onClick={() =>noteText!="" && setNotes([...notes, noteText])}>
                     push_pin
                 </span>
             </div>
             <input className={state.color} type="text" placeholder="Take a note"
-                value={noteText} onChange={(e) => setNoteText(e.target.value)}
-                onKeyPress={(e) => e.key === "Enter" && setNotes([...notes, noteText])} />
+                value={noteText} onChange={(e) =>setNoteText(e.target.value)}
+                onKeyPress={(e) => e.key === "Enter" && noteText!="" && setNotes([...notes, noteText])} />
 
             <div className="editor-footer">
 
