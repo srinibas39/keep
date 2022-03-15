@@ -10,12 +10,12 @@ export const ColorPalette = () => {
     const row3 = ["color7", "color8", "color9"]
 
     return <>
-        <span className="material-icons-outlined color-icon" onClick={() => setColors(!colors)}>
+        <span className="material-icons-outlined color-icon" onMouseEnter={() => setColors(true)} onMouseLeave={()=>setColors(false)} >
             palette
         </span>
 
         {
-            colors && <div className="colors">
+            colors && <div className="colors" onMouseEnter={() => setColors(true)} onMouseLeave={()=>setColors(false)}>
                 <div className="row">
                     {
                         row1.map((el, idx) => {
