@@ -11,8 +11,10 @@ export const NoteProvider = ({ children }) => {
     const [tags, setTags] = useState(["All", "work", "Home", "Class"]);
     const [tag, setTag] = useState("")
     const [selectedFilter, setSelectedFilter] = useState("work");
+    const [del,setDel]=useState("");
+    
    
-    return <NoteContext.Provider value={{ noteText, setNoteText, notes, setNotes, tags, setTags, tag, setTag, selectedFilter, setSelectedFilter }}>
+    return <NoteContext.Provider value={{ noteText, setNoteText, notes, setNotes, tags, setTags, tag, setTag, selectedFilter, setSelectedFilter ,del,setDel}}>
         {children}
     </NoteContext.Provider>
 }

@@ -20,3 +20,9 @@
     color: red;
     cursor: pointer;
 }
+
+.notes-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
