@@ -1,30 +1,38 @@
-
-.body{
-    display: grid;
-    grid-template-columns: 20vw 1fr;
-    grid-template-areas: 
-    "nav div";
-    margin: 1rem;
-    justify-content: center;
+.body {
+  display: grid;
+  grid-template-columns: 20vw 1fr;
+  grid-template-areas: "nav div";
+  margin: 1rem;
+  justify-content: center;
 }
 
-.nav{
-    grid-area: nav;
-
+.nav {
+  grid-area: nav;
 }
 
-.nav ul{
-    list-style: none;
-    
+.nav ul {
+  list-style: none;
 }
-.nav ul>*{
-    margin: 1rem 0;
-    cursor: pointer;
+.nav ul > * {
+  margin: 1rem 0;
+  cursor: pointer;
 }
-.content{
-    grid-area: div;
-    
+.content {
+  grid-area: div;
 }
-.select{
-    color: red;
+.select {
+  color: red;
+}
+.filter-input {
+  width: 70%;
+  height: 2rem;
+  padding: 10px;
+  background-color: gold;
+  outline: none;
+  border: none;
+}
+.filter-button {
+  height: 2rem;
+  width: 2rem;
+  border: none;
 }
