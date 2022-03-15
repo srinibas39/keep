@@ -27,7 +27,7 @@ export const Body = () => {
 
                 }
                 <li><input className="filter-input" type="text" value={tag} onChange={(e) => setTag(e.target.value)} />
-                    <button className="filter-button" onClick={() => setTags([...tags, tag && tag])}>+</button></li>
+                    <button className="filter-button" onClick={() => tag!="" && setTags([...tags,tag])}>+</button></li>
             </ul>
         </nav>
         <div className="content">
