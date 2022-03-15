@@ -25,7 +25,7 @@ export const Editor = () => {
                     push_pin
                 </span>
             </div>
-            <input className={state.color} type="text" placeholder="Take a note" value={noteText} onChange={(e) => setNoteText(e.target.value)} />
+            <input className={state.color} type="text" placeholder="Take a note" value={noteText} onChange={(e) => setNoteText(e.target.value)} onKeyPress={(e)=>e.key==="Enter" && setNotes([...notes, noteText]) } />
             <div className="editor-footer">
 
                  <Select setSelectedFilter={setSelectedFilter} tags={tags}/>
