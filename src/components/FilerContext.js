@@ -1,4 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
+import { useNotes } from "./NoteContext";
 
 export const FilterContext=createContext();
 
@@ -19,6 +20,7 @@ export const FilterProvider=({children})=>{
     }
  
     const [state,dispatch] = useReducer(reducerFn,{filter:"work",color:null});
+    
     
     return <FilterContext.Provider value={{state,dispatch}}>
             {children}
